@@ -1,0 +1,6 @@
+<group name="meraki-fw">
+  <rule id="100900" level="3">
+    <decoded_as>meraki-fw</decoded_as>
+    <description>meraki syslog</description>
+  </rule>
+</group>
