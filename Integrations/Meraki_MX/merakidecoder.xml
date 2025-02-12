@@ -1,0 +1,61 @@
+<decoder name="meraki-fw">
+  <prematch>^1 (\.+) (\.+) firewall</prematch>
+</decoder>
+
+<decoder name="meraki-fwx">
+  <parent>meraki-fw</parent>
+  <type>firewall</type>
+    <regex>^1 (\.+) (\.+) (\.+) (\.+)</regex>
+    <order>ts,system_name,merevent</order>
+</decoder> 
+
+
+<decoder name="meraki-fwx">
+  <parent>meraki-fw</parent>
+    <regex> src=(\.+) dst=(\.+) (\.*) </regex>
+  <order>srcip,dstip</order>
+</decoder>
+
+<decoder name="meraki-fwx">
+  <parent>meraki-fw</parent>
+   <regex> protocol=(\w+) </regex>
+  <order>protocol</order>
+</decoder>
+
+<decoder name="meraki-fwx">
+  <parent>meraki-fw</parent>
+   <regex> type=(\d+)</regex>
+  <order>protocoltype</order>
+</decoder>
+
+<decoder name="meraki-fwx">
+  <parent>meraki-fw</parent>
+   <regex> mac=(\.+) (\.*)</regex>
+  <order>mac</order>
+</decoder>
+
+<decoder name="meraki-fwx">
+  <parent>meraki-fw</parent>
+   <regex> pattern: (\.+) (\.*)</regex>
+  <order> action,merextra</order>
+</decoder>
+
+<decoder name="meraki-fwx">
+  <parent>meraki-fw</parent>
+   <regex> sport=(\d+) dport=(\d+)</regex>
+  <order>srcport,dstport</order>
+</decoder>
+
+
+<!-- hack for old flows -->
+<decoder name="meraki-fwx">
+  <parent>meraki-fw</parent>
+   <regex> flows (\w+) src=</regex>
+  <order>action</order>
+</decoder>
+
+<decoder name="meraki-fwx">
+  <parent>meraki-fw</parent>
+   <regex> decision=(\w+)</regex>
+  <order>decision</order>
+</decoder>
