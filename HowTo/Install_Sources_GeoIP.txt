@@ -1,0 +1,14 @@
+# This is not a Script #
+apt-get update
+apt-get install python gcc g++ make libc6-dev curl policycoreutils automake autoconf libtool libssl-dev procps libgeoip-dev
+curl -OL https://packages.wazuh.com/utils/cmake/cmake-3.18.3.tar.gz && tar -zxf cmake-3.18.3.tar.gz && cd cmake-3.18.3 && ./bootstrap --no-system-curl && make -j$(nproc) && make install
+cd .. && rm -rf cmake-*
+curl -Ls https://github.com/wazuh/wazuh/archive/v4.10.1.tar.gz | tar zx
+cd wazuh-4.10.1
+make -C src clean
+make -C src clean-deps
+make deps TARGET=server
+make TARGET=server USE_GEOIP=YES
+./install.sh
+sudo systemctl start wazuh-manager
+sudo systemctl enable wazuh-manager
