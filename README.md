@@ -1,18 +1,18 @@
 # Wazuh Collection
 
 ## Overview
-This repository is used by me as I configure Wazuh. It is a constant work in progress, and I will keep adding new decoders, rules, and configurations as needed. The goal is to enhance log parsing, threat detection, and security monitoring capabilities.
+This repository is used by me as I configure Wazuh. It is a constant work in progress, and I will keep adding new decoders, rules, configurations, integrations, and tools as needed. The goal is to enhance log parsing, threat detection, and security monitoring capabilities.
 
 ## Contents
 This repository contains:
-- **Decoders (`decoders/`)**: Custom XML-based Wazuh decoders for parsing various log sources.
-- **Rules (`rules/`)**: Custom detection rules to generate alerts based on specific log patterns.
-- **Configurations (`configs/`)**: Additional Wazuh configuration files.
+- **How-To Guides (`how-to/`)**: Instructions and guides on integrating Wazuh with different tools and services.
+- **Integrations (`integrations/`)**: Custom scripts and configurations to integrate Wazuh with other security and logging solutions.
+- **Tools (`tools/`)**: Utility scripts to aid in Wazuh management and log analysis.
 
 More items may be added over time as I refine and expand my Wazuh setup.
 
 ## Contributions
-Contributions are welcome! If you have additional rules, decoders, or improvements, feel free to submit a pull request.
+Contributions are welcome! If you have additional rules, decoders, integrations, or tools, feel free to submit a pull request.
 
 ## License
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
