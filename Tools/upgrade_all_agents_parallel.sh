@@ -9,7 +9,7 @@
 #
 # Example:
 #   ./upgrade_all_agents_xargs.sh 10
-#   (Defaults to 10 parallel jobs if not provided)
+#   (Defaults to 5 parallel jobs if not provided)
 
 # Set the number of parallel jobs (default: 5)
 NUM_JOBS="${1:-5}"
